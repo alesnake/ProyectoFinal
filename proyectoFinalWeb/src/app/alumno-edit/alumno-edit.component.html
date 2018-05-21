@@ -1,0 +1,49 @@
+<div class="col-md-6">
+  <h2 class="text-center">Añadir Usuario</h2>
+
+  <form>
+    <div class="form-group">
+      <label for="nombre">Nombre:</label>
+      <input [(ngModel)]="alumno.nombre" placeholder="Nombre" name="Nombre" class="form-control" id="Nombre">
+    </div>
+
+    <div class="form-group">
+      <label for="apellidos">Apellidos:</label>
+      <input [(ngModel)]="alumno.apellidos" placeholder="Apellidose" name="Apellidos" class="form-control" id="Apellidos">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" [(ngModel)]="alumno.email" placeholder="Email" name="email" class="form-control" id="email">
+    </div>
+
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input [(ngModel)]="alumno.username" placeholder="Username" name="Username" class="form-control" id="Username">
+    </div>
+
+    <div class="form-group">
+      <label for="pass">Password:</label>
+      <input type="password" [(ngModel)]="alumno.pass" placeholder="Password" name="Password" class="form-control" id="Password">
+    </div>
+
+    <div class="form-group">
+      <select [(ngModel)]="alumno.idCicloAux" placeholder="Ciclo" name="Ciclo" class="form-control form-control" id="Ciclo">
+          <option *ngFor="let ciclo of ciclos" value="{{ciclo.idCiclo}}">{{ciclo.siglas}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <select [(ngModel)]="alumno.idEmpresaAux" placeholder="Empresa" name="Empresa" class="form-control form-control" id="Empresa">
+          <option *ngFor="let empresa of empresas" value="{{empresa.idEmpresa}}">{{empresa.nombre}}</option>
+      </select>
+    </div>
+
+    <button class="btn btn-success" (click)="createAlumno()">Crear</button>
+    <button type="submit" class="btn btn-primary" routerLink="/lista-alumnos">Cancelar</button>
+  </form>
+</div>
+    <!--  [disabled]="!carForm.form.valid" -->
+    <!--<button type="submit" class="btn btn-primary" (click)="createUser()">Aceptar</button>
+    <button type="submit" class="btn btn-primary" routerLink="/lista-alumnos">Cancelar</button>
+  </form>-->

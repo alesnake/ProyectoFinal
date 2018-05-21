@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-md-2">
+      <br>
+        <a [routerLink]="['/alumno-add']">Añadir Alumno</a>
+      </div>
+      
+      <div class="col-md-10">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Apellidos</th>
+                  <th scope="col">E-Mail</th>
+                  <th scope="col">Username</th>
+                  <th scope="col">Password</th>
+                  <th scope="col">Ciclo</th>
+                  <th scope="col">Empresa</th>
+                  <th scope="col">Responsable</th>
+                  <th scope="col">Acciones</th>
+                </tr>
+              </thead>
+            
+              <tbody>
+                <tr *ngFor="let alumno of alumnos">
+                    <th scope="row">{{alumno.idAlumno}}</th>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.apellidos}}</td>
+                    <td>{{alumno.email}}</td>
+                    <td>{{alumno.username}}</td>
+                    <td>{{alumno.pass}}</td>
+                    <td>DAM</td>
+                    <td>Everis</td>
+                    <td>Ruth Emo Marty</td>
+                    <td>
+                      <!-- <i class="fas fa-plus" ></i> -->
+                      <a [routerLink]="['/alumno-edit, alumno.idAlumno']"> 
+                        <i class="fas fa-wrench"></i>
+                      </a>
+                      <button (click)="deleteAlumno(alumno)">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+      </div>
+</div>
