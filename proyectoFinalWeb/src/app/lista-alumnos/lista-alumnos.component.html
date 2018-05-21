@@ -1,7 +1,9 @@
 <div class="row">
     <div class="col-md-2">
       <br>
-        <a [routerLink]="['/alumno-add']">Añadir Alumno</a>
+      <a [routerLink]="['/alumno-add']">Añadir Alumno</a>
+      <br>
+      
       </div>
       
       <div class="col-md-10">
@@ -34,7 +36,7 @@
                     <td>Ruth Emo Marty</td>
                     <td>
                       <!-- <i class="fas fa-plus" ></i> -->
-                      <a [routerLink]="['/alumno-edit, alumno.idAlumno']"> 
+                      <a [routerLink]="['/alumno-edit/'+alumno.idAlumno]"> 
                         <i class="fas fa-wrench"></i>
                       </a>
                       <button (click)="deleteAlumno(alumno)">

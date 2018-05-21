@@ -38,46 +38,19 @@ public class AlumnoController {
         return repository.findById(id);
     }
 
-    /*@GetMapping(path = "/name/{nombre}")
+    @GetMapping(path = "/empresa/{id}")
     @CrossOrigin(origins = "http://localhost:4200")
     public @ResponseBody
-    Alumno getAlumnoNombre(@PathVariable("nombre") String nombre){
-        return repository.findByNombre(nombre);
-    }*/
+    Iterable<Alumno> getAlumnoByEmpresa(@PathVariable("id") Integer id){
+        return repository.findByIdEmpresaAux(id);
+    }
 
-    /*
-    /**
-     * Añade un nuevo alumno a la BBDD
-     * @param nombre
-     * @param apellidos
-     * @param email
-     * @param username
-     * @param pass
-     * @param idEmpresaAux
-     * @param idCicloAux
-     * @return String con valor "Saved"
-
-    @GetMapping(path = "/add")//URL a la que se accede para añadir un alumno a la BBDD
+    @GetMapping(path = "/ciclo/{id}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public @ResponseBody String addAlumno(@RequestParam String nombre, @RequestParam String apellidos, @RequestParam String email,
-                                          @RequestParam String username, @RequestParam String pass, @RequestParam int idEmpresaAux,
-                                          @RequestParam int idCicloAux){
-
-        Alumno a = new Alumno();
-
-        a.setNombre(nombre);
-        a.setApellidos(apellidos);
-        a.setEmail(email);
-        a.setUsername(username);
-        a.setPass(pass);
-        a.setAdmin(0);
-        a.setIdEmpresaAux(idEmpresaAux);
-        a.setIdCicloAux(idCicloAux);
-
-        repository.save(a);
-
-        return "Saved";
-    }*/
+    public @ResponseBody
+    Iterable<Alumno> getAlumnoByCiclo(@PathVariable("id") Integer id){
+        return repository.findByIdCicloAux(id);
+    }
 
     @PostMapping(path = "/add")
     @CrossOrigin(origins = "http://localhost:4200")

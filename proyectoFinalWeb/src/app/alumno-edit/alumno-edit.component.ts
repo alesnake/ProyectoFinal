@@ -45,7 +45,6 @@ export class AlumnoEditComponent implements OnInit, OnDestroy {
         this.alumnoService.get(id).subscribe((alumno: any) => {
           if(alumno){
             this.alumno = alumno;
-            this.alumno.href = alumno._links.self.href;
           }
           else{
             console.log('El alumno no existe');

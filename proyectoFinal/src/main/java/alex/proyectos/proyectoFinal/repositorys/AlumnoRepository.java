@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin(origins = "http://localhost:4200")//permite a localhost de Angular conectar a la REST API
 public interface AlumnoRepository extends CrudRepository<Alumno, Integer> {
 
-    Alumno findByNombre(String nombre);
+    Iterable<Alumno> findByIdEmpresaAux(Integer idEmpresa);
+    Iterable<Alumno> findByIdCicloAux(Integer idCiclo);
 
 }

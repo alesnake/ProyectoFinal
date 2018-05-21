@@ -23,21 +23,6 @@ export class AlumnoService {
     return this.http.get(this.ALUMNO_API + '/'+id);
   }
 
-  //llama al servicio de la API REST que guarda un alumno en la BBDD
-  save(alumno: any): Observable<any> {
-    let result: Observable<Object>;
-
-    //si el alumno viene de la parte de edit, se modifica uno, sino se crea uno
-    if(alumno['href']){
-
-      result = this.http.put(alumno.href, alumno);
-
-    }else{
-      result = this.http.post(this.ALUMNO_API, alumno);
-    }
-    return result;
-  }
-
   //llama al servicio de la API REST que añade un alumno nuevo a la BBDD
   createAlumno(alumno){
     return this.http.post<Alumno>(this.ALUMNO_API + '/add', alumno);
